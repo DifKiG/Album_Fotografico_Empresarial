@@ -1,0 +1,17 @@
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\bin\Debug\Album Fotografico Empresarial.exe.config
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\bin\Debug\Album Fotografico Empresarial.exe
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\bin\Debug\Album Fotografico Empresarial.pdb
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\bin\Debug\MySql.Data.dll
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\bin\Debug\System.Memory.dll
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\bin\Debug\System.Numerics.Vectors.dll
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\bin\Debug\System.Buffers.dll
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\bin\Debug\MySql.Data.xml
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\obj\Debug\Album Fotografico Empresarial.csproj.AssemblyReference.cache
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\obj\Debug\Album_Fotografico_Empresarial.Form1.resources
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\obj\Debug\Album_Fotografico_Empresarial.Properties.Resources.resources
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\obj\Debug\Album Fotografico Empresarial.csproj.GenerateResource.cache
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\obj\Debug\Album Fotografico Empresarial.csproj.CoreCompileInputs.cache
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\obj\Debug\Album Fotografico Empresarial.csproj.CopyComplete
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\obj\Debug\Album Fotografico Empresarial.exe
+C:\Album_Fotografico_Empresarial\Album Fotografico Empresarial\obj\Debug\Album Fotografico Empresarial.pdb
