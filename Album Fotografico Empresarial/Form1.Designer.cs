@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCargar = new System.Windows.Forms.Button();
             this.Imagen = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnCargar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.textLugar = new System.Windows.Forms.TextBox();
+            this.textDescrip = new System.Windows.Forms.TextBox();
             this.textEvento = new System.Windows.Forms.TextBox();
             this.textId = new System.Windows.Forms.TextBox();
             this.Descripcion = new System.Windows.Forms.Label();
@@ -54,14 +54,14 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.Controls.Add(this.btnCargar);
             this.groupBox1.Controls.Add(this.Imagen);
             this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.btnCargar);
             this.groupBox1.Controls.Add(this.btnNuevo);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnEliminar);
-            this.groupBox1.Controls.Add(this.textLugar);
+            this.groupBox1.Controls.Add(this.textDescrip);
             this.groupBox1.Controls.Add(this.textEvento);
             this.groupBox1.Controls.Add(this.textId);
             this.groupBox1.Controls.Add(this.Descripcion);
@@ -74,6 +74,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registros Fotograficos";
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCargar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Location = new System.Drawing.Point(236, 354);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(144, 29);
+            this.btnCargar.TabIndex = 13;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = false;
             // 
             // Imagen
             // 
@@ -95,13 +106,6 @@
             this.btnBuscar.TabIndex = 10;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // btnCargar
-            // 
-            this.btnCargar.Location = new System.Drawing.Point(0, 0);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 23);
-            this.btnCargar.TabIndex = 13;
             // 
             // btnNuevo
             // 
@@ -145,15 +149,15 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // textLugar
+            // textDescrip
             // 
-            this.textLugar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textLugar.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLugar.Location = new System.Drawing.Point(21, 144);
-            this.textLugar.Multiline = true;
-            this.textLugar.Name = "textLugar";
-            this.textLugar.Size = new System.Drawing.Size(187, 186);
-            this.textLugar.TabIndex = 5;
+            this.textDescrip.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textDescrip.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDescrip.Location = new System.Drawing.Point(21, 144);
+            this.textDescrip.Multiline = true;
+            this.textDescrip.Name = "textDescrip";
+            this.textDescrip.Size = new System.Drawing.Size(187, 186);
+            this.textDescrip.TabIndex = 5;
             // 
             // textEvento
             // 
@@ -256,8 +260,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnCargar;
-        private System.Windows.Forms.TextBox textLugar;
+        private System.Windows.Forms.TextBox textDescrip;
         private System.Windows.Forms.TextBox textEvento;
         private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.Label Descripcion;
@@ -270,6 +273,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label Imagen;
+        private System.Windows.Forms.Button btnCargar;
     }
 }
 

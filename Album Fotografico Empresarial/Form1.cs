@@ -34,16 +34,24 @@ namespace Album_Fotografico_Empresarial
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            string connection = "server=127.0.0.1; user id=root; password= santiago; database=Registro empresarial fotos";
+            string connection = "server=localhost; user id=root; password= santiago; database=fotosEmpres";
+
             string query = "INSERT INTO fotos(ID,Nombre_del_evento,Descripción,Imagen)VALUES" +
-                "('" + this.Id.Text + "','" + this.NombreDelEvento.Text + "','" + this.Descripcion.Text + "','" + this.Imagen.Text + "')";
+                "('" + this.textId.Text + "','" + this.textEvento.Text + "','" + this.textDescrip.Text + "','" + this.Imagen.Text + "')";
+            
             MySqlConnection conn = new MySqlConnection(connection);
+
             MySqlCommand cmd = new MySqlCommand(query, conn);
+
             MySqlDataReader dr;
+
             conn.Open();
+
             dr = cmd.ExecuteReader();
-            MessageBox.Show("Successfully saved");
+
+            MessageBox.Show("Guardado con exito");
+
             conn.Close();
         }
-    }
+    }   
 }
