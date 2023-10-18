@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSeleccionarImagen = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
             this.Imagen = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -54,6 +55,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.Controls.Add(this.btnSeleccionarImagen);
             this.groupBox1.Controls.Add(this.btnCargar);
             this.groupBox1.Controls.Add(this.Imagen);
             this.groupBox1.Controls.Add(this.btnBuscar);
@@ -75,13 +77,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registros Fotograficos";
             // 
+            // btnSeleccionarImagen
+            // 
+            this.btnSeleccionarImagen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSeleccionarImagen.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarImagen.Location = new System.Drawing.Point(287, 353);
+            this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
+            this.btnSeleccionarImagen.Size = new System.Drawing.Size(98, 28);
+            this.btnSeleccionarImagen.TabIndex = 14;
+            this.btnSeleccionarImagen.Text = "Seleccionar";
+            this.btnSeleccionarImagen.UseVisualStyleBackColor = false;
+            this.btnSeleccionarImagen.Click += new System.EventHandler(this.btnSeleccionarImagen_Click);
+            // 
             // btnCargar
             // 
             this.btnCargar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCargar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(236, 354);
+            this.btnCargar.Location = new System.Drawing.Point(117, 353);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(144, 29);
+            this.btnCargar.Size = new System.Drawing.Size(91, 28);
             this.btnCargar.TabIndex = 13;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = false;
@@ -111,9 +125,9 @@
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnNuevo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(74, 354);
+            this.btnNuevo.Location = new System.Drawing.Point(21, 353);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(144, 29);
+            this.btnNuevo.Size = new System.Drawing.Size(91, 28);
             this.btnNuevo.TabIndex = 9;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -123,18 +137,20 @@
             // 
             this.btnEditar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnEditar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(74, 403);
+            this.btnEditar.Location = new System.Drawing.Point(21, 402);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(144, 29);
+            this.btnEditar.Size = new System.Drawing.Size(91, 28);
             this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.RosyBrown;
             this.pictureBox1.Location = new System.Drawing.Point(223, 144);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(228, 186);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -142,9 +158,9 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(236, 403);
+            this.btnEliminar.Location = new System.Drawing.Point(117, 402);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(144, 29);
+            this.btnEliminar.Size = new System.Drawing.Size(91, 28);
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -246,6 +262,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro Fotografico Empresarial";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -274,6 +291,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label Imagen;
         private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Button btnSeleccionarImagen;
     }
 }
 
