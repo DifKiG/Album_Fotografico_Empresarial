@@ -79,7 +79,7 @@ namespace Album_Fotografico_Empresarial
 
             if (opf.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(opf.FileName);
+                pictureBox1.Image = Image.FromFile(opf.FileName); 
             }
         }
 
@@ -91,13 +91,21 @@ namespace Album_Fotografico_Empresarial
 
             MemoryStream ms = new MemoryStream(img);
 
-            //img.Save(ms, ImageFormat.Jpeg);
-
             pictureBox1.Image = Image.FromStream(ms);
 
             textId.Text = dGVFotograf.CurrentRow.Cells[0].Value.ToString();
             textEvento.Text = dGVFotograf.CurrentRow.Cells[1].Value.ToString();
             textDescrip.Text = dGVFotograf.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            MemoryStream ms = new MemoryStream();
+            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+            byte[] img = ms.ToArray();
+            MySqlCommand commad = new MySqlCommand("INSERT INTO fotos(ID, Nombre_del_evento, Descripción, Imagen) VALUES (@id, @nombre, @desc, @imag )", conn);
+
+            commad.Parameters.Add("@id", MySqlDbType.VarChar).Value = textId.Text;  terminar de copiar
         }
     }   
 }
