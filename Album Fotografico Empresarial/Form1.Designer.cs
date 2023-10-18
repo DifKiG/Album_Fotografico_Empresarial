@@ -131,7 +131,6 @@
             this.btnNuevo.TabIndex = 9;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
@@ -230,9 +229,10 @@
             this.dGVFotograf.GridColor = System.Drawing.Color.Salmon;
             this.dGVFotograf.Location = new System.Drawing.Point(12, 21);
             this.dGVFotograf.Name = "dGVFotograf";
+            this.dGVFotograf.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVFotograf.Size = new System.Drawing.Size(528, 421);
             this.dGVFotograf.TabIndex = 1;
-            this.dGVFotograf.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVFotograf_CellContentClick);
+            this.dGVFotograf.Click += new System.EventHandler(this.dGVFotograf_Click);
             // 
             // openFileDialog1
             // 

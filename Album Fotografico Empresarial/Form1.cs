@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
+using System.Drawing.Imaging;
 
 
 
@@ -46,35 +48,28 @@ namespace Album_Fotografico_Empresarial
 
             adapter.Fill(table);
 
+            dGVFotograf.RowTemplate.Height = 60;
+
+            dGVFotograf.AllowUserToAddRows = false;
+
             dGVFotograf.DataSource = table;
+
+            DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+
+            imgCol = (DataGridViewImageColumn)dGVFotograf.Columns[3];
+
+            imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            dGVFotograf.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
-        private void dGVFotograf_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       /*private void dGVFotograf_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-        }
+        }*/
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            //string connection = "server=localhost; user id=root; password= santiago; database=fotosEmpres";
-
-            //string query = "INSERT INTO fotos(ID,Nombre_del_evento,Descripción,Imagen)VALUES" +
-            //  "('" + this.textId.Text + "','" + this.textEvento.Text + "','" + this.textDescrip.Text + "','" + this.Imagen.Text + "')";
-            
-            //
-            
-
-
-            //MySqlDataReader dr;
-
-            //conn.Open();
-
-            //dr = cmd.ExecuteReader();
-
-            //MessageBox.Show("Guardado con exito");
-
-            //conn.Close();
-        }
+        
 
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
         {
@@ -88,6 +83,21 @@ namespace Album_Fotografico_Empresarial
             }
         }
 
-        
+        private void dGVFotograf_Click(object sender, EventArgs e)
+        {
+            
+
+            Byte[] img = (Byte[])dGVFotograf.CurrentRow.Cells[3].Value;
+
+            MemoryStream ms = new MemoryStream(img);
+
+            //img.Save(ms, ImageFormat.Jpeg);
+
+            pictureBox1.Image = Image.FromStream(ms);
+
+            textId.Text = dGVFotograf.CurrentRow.Cells[0].Value.ToString();
+            textEvento.Text = dGVFotograf.CurrentRow.Cells[1].Value.ToString();
+            textDescrip.Text = dGVFotograf.CurrentRow.Cells[2].Value.ToString();
+        }
     }   
 }
