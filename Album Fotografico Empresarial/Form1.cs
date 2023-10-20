@@ -64,13 +64,7 @@ namespace Album_Fotografico_Empresarial
 
         }
 
-       /*private void dGVFotograf_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }*/
-
         
-
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -79,13 +73,13 @@ namespace Album_Fotografico_Empresarial
 
             if (opf.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(opf.FileName); 
+                pictureBox1.Image = Image.FromFile(opf.FileName);
             }
         }
 
         private void dGVFotograf_Click(object sender, EventArgs e)
         {
-            
+
 
             Byte[] img = (Byte[])dGVFotograf.CurrentRow.Cells[3].Value;
 
@@ -103,9 +97,55 @@ namespace Album_Fotografico_Empresarial
             MemoryStream ms = new MemoryStream();
             pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
             byte[] img = ms.ToArray();
-            MySqlCommand commad = new MySqlCommand("INSERT INTO fotos(ID, Nombre_del_evento, Descripción, Imagen) VALUES (@id, @nombre, @desc, @imag )", conn);
+            MySqlCommand command = new MySqlCommand("INSERT INTO fotos(ID, Nombre_del_evento, Descripción, Imagen) VALUES (@id, @nombre, @desc, @imag )", conn);
 
-            commad.Parameters.Add("@id", MySqlDbType.VarChar).Value = textId.Text;  terminar de copiar
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = textId.Text;
+            command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = textEvento.Text;
+            command.Parameters.Add("@desc", MySqlDbType.VarChar).Value = textDescrip.Text;
+            command.Parameters.Add("@imag", MySqlDbType.Blob).Value = img;
+
+            ExecMyQuery(command, "Datos Insertados");
         }
-    }   
+
+        public void ExecMyQuery(MySqlCommand mcomd, string myMsg)
+        {
+            conn.Open();
+            if(mcomd.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show(myMsg);
+
+            } 
+            else
+            {
+                MessageBox.Show("Query Not Executed");
+            }
+            conn.Close();
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            MemoryStream ms = new MemoryStream();
+            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+            byte[] img = ms.ToArray();
+            MySqlCommand command = new MySqlCommand("UPDATE fotos SET Nombre_del_evento = @nombre, Descripción = @desc, Imagen=@imag WHERE ID = @id", conn);
+
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = textId.Text;
+            command.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = textEvento.Text;
+            command.Parameters.Add("@desc", MySqlDbType.VarChar).Value = textDescrip.Text;
+            command.Parameters.Add("@imag", MySqlDbType.Blob).Value = img;
+
+            ExecMyQuery(command, "Datos cargados");
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+                        
+            MySqlCommand command = new MySqlCommand("DELETE FROM fotos WHERE ID = @id", conn);
+
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = textId.Text;
+
+            ExecMyQuery(command, "Datos Eliminados");
+        }
+    }
+
 }
