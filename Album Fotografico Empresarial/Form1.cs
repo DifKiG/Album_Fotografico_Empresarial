@@ -80,7 +80,6 @@ namespace Album_Fotografico_Empresarial
         private void dGVFotograf_Click(object sender, EventArgs e)
         {
 
-
             Byte[] img = (Byte[])dGVFotograf.CurrentRow.Cells[3].Value;
 
             MemoryStream ms = new MemoryStream(img);
@@ -117,9 +116,11 @@ namespace Album_Fotografico_Empresarial
             } 
             else
             {
-                MessageBox.Show("Query Not Executed");
+                MessageBox.Show("Consulta no realizada");
             }
             conn.Close();
+
+            FillDGV();
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -146,6 +147,47 @@ namespace Album_Fotografico_Empresarial
 
             ExecMyQuery(command, "Datos Eliminados");
         }
-    }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            MySqlCommand command = new MySqlCommand("SELECT FROM fotos WHERE ID = @id", conn);
+
+            command.Parameters.Add("@id", MySqlDbType.VarChar).Value = textId.Text;
+            
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+
+            DataTable table = new DataTable();
+
+            adapter.Fill(table);
+
+            if (table.Rows.Count <= 0)
+            {
+                MessageBox.Show("Datos no encontrados");
+            }
+            else
+            {
+                textId.Text = table.Rows[0][0].ToString();
+                textEvento.Text = table.Rows[0][1].ToString();
+                textDescrip.Text = table.Rows[0][2].ToString();
+
+                byte[] img = (byte[])table.Rows[0][3];
+                MemoryStream ms = new MemoryStream(img);
+                pictureBox1.Image = Image.FromStream(ms);
+
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+        public void ClearFields()
+        {
+            textId.Text =  "";
+            textEvento.Text = "";
+            textDescrip.Text = "";
+
+            pictureBox1.Image = null;
+        }
+    }
 }

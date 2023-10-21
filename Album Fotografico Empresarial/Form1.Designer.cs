@@ -32,9 +32,7 @@
             this.btnSeleccionarImagen = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
             this.Imagen = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.textDescrip = new System.Windows.Forms.TextBox();
@@ -46,6 +44,7 @@
             this.dGVFotograf = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVFotograf)).BeginInit();
@@ -55,12 +54,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnSeleccionarImagen);
             this.groupBox1.Controls.Add(this.btnCargar);
             this.groupBox1.Controls.Add(this.Imagen);
-            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.btnNuevo);
-            this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.textDescrip);
@@ -72,7 +70,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(468, 448);
+            this.groupBox1.Size = new System.Drawing.Size(451, 448);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registros Fotograficos";
@@ -81,9 +79,9 @@
             // 
             this.btnSeleccionarImagen.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSeleccionarImagen.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionarImagen.Location = new System.Drawing.Point(287, 353);
+            this.btnSeleccionarImagen.Location = new System.Drawing.Point(129, 363);
             this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
-            this.btnSeleccionarImagen.Size = new System.Drawing.Size(98, 28);
+            this.btnSeleccionarImagen.Size = new System.Drawing.Size(188, 28);
             this.btnSeleccionarImagen.TabIndex = 14;
             this.btnSeleccionarImagen.Text = "Seleccionar";
             this.btnSeleccionarImagen.UseVisualStyleBackColor = false;
@@ -93,7 +91,7 @@
             // 
             this.btnCargar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCargar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(117, 353);
+            this.btnCargar.Location = new System.Drawing.Point(129, 397);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(91, 28);
             this.btnCargar.TabIndex = 13;
@@ -105,52 +103,30 @@
             // 
             this.Imagen.AutoSize = true;
             this.Imagen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Imagen.Location = new System.Drawing.Point(220, 122);
+            this.Imagen.Location = new System.Drawing.Point(181, 172);
             this.Imagen.Name = "Imagen";
             this.Imagen.Size = new System.Drawing.Size(71, 19);
             this.Imagen.TabIndex = 12;
             this.Imagen.Text = "Imagen:";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnBuscar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(223, 37);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(192, 29);
-            this.btnBuscar.TabIndex = 10;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnNuevo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(21, 353);
+            this.btnNuevo.Location = new System.Drawing.Point(32, 397);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(91, 28);
+            this.btnNuevo.Size = new System.Drawing.Size(91, 29);
             this.btnNuevo.TabIndex = 9;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnEditar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(21, 402);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(91, 28);
-            this.btnEditar.TabIndex = 7;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.RosyBrown;
-            this.pictureBox1.Location = new System.Drawing.Point(223, 144);
+            this.pictureBox1.Location = new System.Drawing.Point(91, 194);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(228, 186);
+            this.pictureBox1.Size = new System.Drawing.Size(261, 154);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -159,7 +135,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(117, 402);
+            this.btnEliminar.Location = new System.Drawing.Point(323, 398);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(91, 28);
             this.btnEliminar.TabIndex = 8;
@@ -171,35 +147,35 @@
             // 
             this.textDescrip.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textDescrip.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDescrip.Location = new System.Drawing.Point(21, 144);
+            this.textDescrip.Location = new System.Drawing.Point(32, 103);
             this.textDescrip.Multiline = true;
             this.textDescrip.Name = "textDescrip";
-            this.textDescrip.Size = new System.Drawing.Size(187, 186);
+            this.textDescrip.Size = new System.Drawing.Size(382, 65);
             this.textDescrip.TabIndex = 5;
             // 
             // textEvento
             // 
             this.textEvento.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textEvento.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEvento.Location = new System.Drawing.Point(224, 76);
+            this.textEvento.Location = new System.Drawing.Point(232, 47);
             this.textEvento.Name = "textEvento";
-            this.textEvento.Size = new System.Drawing.Size(191, 22);
+            this.textEvento.Size = new System.Drawing.Size(182, 22);
             this.textEvento.TabIndex = 4;
             // 
             // textId
             // 
             this.textId.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textId.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textId.Location = new System.Drawing.Point(74, 40);
+            this.textId.Location = new System.Drawing.Point(32, 47);
             this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(76, 22);
+            this.textId.Size = new System.Drawing.Size(67, 22);
             this.textId.TabIndex = 3;
             // 
             // Descripcion
             // 
             this.Descripcion.AutoSize = true;
             this.Descripcion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Descripcion.Location = new System.Drawing.Point(17, 122);
+            this.Descripcion.Location = new System.Drawing.Point(28, 81);
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Size = new System.Drawing.Size(107, 19);
             this.Descripcion.TabIndex = 2;
@@ -209,7 +185,7 @@
             // 
             this.NombreDelEvento.AutoSize = true;
             this.NombreDelEvento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreDelEvento.Location = new System.Drawing.Point(17, 79);
+            this.NombreDelEvento.Location = new System.Drawing.Point(231, 25);
             this.NombreDelEvento.Name = "NombreDelEvento";
             this.NombreDelEvento.Size = new System.Drawing.Size(161, 19);
             this.NombreDelEvento.TabIndex = 1;
@@ -219,7 +195,7 @@
             // 
             this.Id.AutoSize = true;
             this.Id.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Id.Location = new System.Drawing.Point(17, 43);
+            this.Id.Location = new System.Drawing.Point(28, 25);
             this.Id.Name = "Id";
             this.Id.Size = new System.Drawing.Size(29, 19);
             this.Id.TabIndex = 0;
@@ -230,10 +206,10 @@
             this.dGVFotograf.AllowUserToOrderColumns = true;
             this.dGVFotograf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVFotograf.GridColor = System.Drawing.Color.Salmon;
-            this.dGVFotograf.Location = new System.Drawing.Point(12, 21);
+            this.dGVFotograf.Location = new System.Drawing.Point(19, 21);
             this.dGVFotograf.Name = "dGVFotograf";
             this.dGVFotograf.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVFotograf.Size = new System.Drawing.Size(528, 421);
+            this.dGVFotograf.Size = new System.Drawing.Size(521, 421);
             this.dGVFotograf.TabIndex = 1;
             this.dGVFotograf.Click += new System.EventHandler(this.dGVFotograf_Click);
             // 
@@ -252,6 +228,18 @@
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tabla con la informacion de registros";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLimpiar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(226, 397);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(91, 29);
+            this.btnLimpiar.TabIndex = 15;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // Form1
             // 
@@ -279,7 +267,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox textDescrip;
         private System.Windows.Forms.TextBox textEvento;
         private System.Windows.Forms.TextBox textId;
@@ -289,12 +276,12 @@
         private System.Windows.Forms.DataGridView dGVFotograf;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label Imagen;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Button btnSeleccionarImagen;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 
