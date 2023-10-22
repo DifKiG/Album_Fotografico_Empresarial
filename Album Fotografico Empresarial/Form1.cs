@@ -35,34 +35,46 @@ namespace Album_Fotografico_Empresarial
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            FillDGV();
+            FillDGV("");
         }
 
-        public void FillDGV()
+        public void FillDGV(string valueToSearch)
         {
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `fotos`", conn);
 
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM `fotos` WHERE CONCAT(ID, Nombre_del_evento, Descripción) LIKE '%" + valueToSearch + "%'", conn);
 
-            DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
 
-            adapter.Fill(table);
+                DataTable table = new DataTable();
 
-            dGVFotograf.RowTemplate.Height = 60;
+                adapter.Fill(table);
 
-            dGVFotograf.AllowUserToAddRows = false;
+                dGVFotograf.RowTemplate.Height = 60;
 
-            dGVFotograf.DataSource = table;
+                dGVFotograf.AllowUserToAddRows = false;
 
-            DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+                dGVFotograf.DataSource = table;
 
-            imgCol = (DataGridViewImageColumn)dGVFotograf.Columns[3];
+                DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
 
-            imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                imgCol = (DataGridViewImageColumn)dGVFotograf.Columns[3];
 
-            dGVFotograf.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
 
-        }
+                dGVFotograf.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al hacer la consulta: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }    
+
 
         
         private void btnSeleccionarImagen_Click(object sender, EventArgs e)
@@ -120,7 +132,7 @@ namespace Album_Fotografico_Empresarial
             }
             conn.Close();
 
-            FillDGV();
+            FillDGV("");
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -188,6 +200,11 @@ namespace Album_Fotografico_Empresarial
             textDescrip.Text = "";
 
             pictureBox1.Image = null;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            FillDGV(textBox1.Text);
         }
     }
 }

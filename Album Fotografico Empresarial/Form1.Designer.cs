@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnSeleccionarImagen = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
-            this.Imagen = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -44,7 +44,8 @@
             this.dGVFotograf = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVFotograf)).BeginInit();
@@ -53,11 +54,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.BackColor = System.Drawing.Color.LightBlue;
             this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnSeleccionarImagen);
             this.groupBox1.Controls.Add(this.btnCargar);
-            this.groupBox1.Controls.Add(this.Imagen);
             this.groupBox1.Controls.Add(this.btnNuevo);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnEliminar);
@@ -75,15 +75,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registros Fotograficos";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLimpiar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(230, 354);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(91, 35);
+            this.btnLimpiar.TabIndex = 15;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // btnSeleccionarImagen
             // 
             this.btnSeleccionarImagen.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSeleccionarImagen.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionarImagen.Location = new System.Drawing.Point(129, 363);
+            this.btnSeleccionarImagen.Location = new System.Drawing.Point(219, 111);
             this.btnSeleccionarImagen.Name = "btnSeleccionarImagen";
-            this.btnSeleccionarImagen.Size = new System.Drawing.Size(188, 28);
+            this.btnSeleccionarImagen.Size = new System.Drawing.Size(199, 28);
             this.btnSeleccionarImagen.TabIndex = 14;
-            this.btnSeleccionarImagen.Text = "Seleccionar";
+            this.btnSeleccionarImagen.Text = "Seleccionar imagen\r\n";
             this.btnSeleccionarImagen.UseVisualStyleBackColor = false;
             this.btnSeleccionarImagen.Click += new System.EventHandler(this.btnSeleccionarImagen_Click);
             // 
@@ -91,31 +103,21 @@
             // 
             this.btnCargar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCargar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(129, 397);
+            this.btnCargar.Location = new System.Drawing.Point(133, 354);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(91, 28);
+            this.btnCargar.Size = new System.Drawing.Size(91, 34);
             this.btnCargar.TabIndex = 13;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
-            // Imagen
-            // 
-            this.Imagen.AutoSize = true;
-            this.Imagen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Imagen.Location = new System.Drawing.Point(181, 172);
-            this.Imagen.Name = "Imagen";
-            this.Imagen.Size = new System.Drawing.Size(71, 19);
-            this.Imagen.TabIndex = 12;
-            this.Imagen.Text = "Imagen:";
-            // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnNuevo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(32, 397);
+            this.btnNuevo.Location = new System.Drawing.Point(36, 354);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(91, 29);
+            this.btnNuevo.Size = new System.Drawing.Size(91, 35);
             this.btnNuevo.TabIndex = 9;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -124,9 +126,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.RosyBrown;
-            this.pictureBox1.Location = new System.Drawing.Point(91, 194);
+            this.pictureBox1.Location = new System.Drawing.Point(219, 166);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(261, 154);
+            this.pictureBox1.Size = new System.Drawing.Size(199, 154);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
@@ -135,9 +137,9 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(323, 398);
+            this.btnEliminar.Location = new System.Drawing.Point(327, 355);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(91, 28);
+            this.btnEliminar.Size = new System.Drawing.Size(91, 34);
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -147,26 +149,27 @@
             // 
             this.textDescrip.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textDescrip.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDescrip.Location = new System.Drawing.Point(32, 103);
+            this.textDescrip.ImeMode = System.Windows.Forms.ImeMode.Katakana;
+            this.textDescrip.Location = new System.Drawing.Point(36, 166);
             this.textDescrip.Multiline = true;
             this.textDescrip.Name = "textDescrip";
-            this.textDescrip.Size = new System.Drawing.Size(382, 65);
+            this.textDescrip.Size = new System.Drawing.Size(177, 154);
             this.textDescrip.TabIndex = 5;
             // 
             // textEvento
             // 
             this.textEvento.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textEvento.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEvento.Location = new System.Drawing.Point(232, 47);
+            this.textEvento.Location = new System.Drawing.Point(33, 114);
             this.textEvento.Name = "textEvento";
-            this.textEvento.Size = new System.Drawing.Size(182, 22);
+            this.textEvento.Size = new System.Drawing.Size(180, 22);
             this.textEvento.TabIndex = 4;
             // 
             // textId
             // 
             this.textId.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textId.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textId.Location = new System.Drawing.Point(32, 47);
+            this.textId.Location = new System.Drawing.Point(33, 61);
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(67, 22);
             this.textId.TabIndex = 3;
@@ -175,7 +178,7 @@
             // 
             this.Descripcion.AutoSize = true;
             this.Descripcion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Descripcion.Location = new System.Drawing.Point(28, 81);
+            this.Descripcion.Location = new System.Drawing.Point(32, 144);
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.Size = new System.Drawing.Size(107, 19);
             this.Descripcion.TabIndex = 2;
@@ -185,7 +188,7 @@
             // 
             this.NombreDelEvento.AutoSize = true;
             this.NombreDelEvento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreDelEvento.Location = new System.Drawing.Point(231, 25);
+            this.NombreDelEvento.Location = new System.Drawing.Point(32, 92);
             this.NombreDelEvento.Name = "NombreDelEvento";
             this.NombreDelEvento.Size = new System.Drawing.Size(161, 19);
             this.NombreDelEvento.TabIndex = 1;
@@ -195,7 +198,7 @@
             // 
             this.Id.AutoSize = true;
             this.Id.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Id.Location = new System.Drawing.Point(28, 25);
+            this.Id.Location = new System.Drawing.Point(29, 39);
             this.Id.Name = "Id";
             this.Id.Size = new System.Drawing.Size(29, 19);
             this.Id.TabIndex = 0;
@@ -206,10 +209,10 @@
             this.dGVFotograf.AllowUserToOrderColumns = true;
             this.dGVFotograf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVFotograf.GridColor = System.Drawing.Color.Salmon;
-            this.dGVFotograf.Location = new System.Drawing.Point(19, 21);
+            this.dGVFotograf.Location = new System.Drawing.Point(19, 81);
             this.dGVFotograf.Name = "dGVFotograf";
             this.dGVFotograf.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVFotograf.Size = new System.Drawing.Size(521, 421);
+            this.dGVFotograf.Size = new System.Drawing.Size(463, 361);
             this.dGVFotograf.TabIndex = 1;
             this.dGVFotograf.Click += new System.EventHandler(this.dGVFotograf_Click);
             // 
@@ -219,7 +222,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.MintCream;
+            this.groupBox2.BackColor = System.Drawing.Color.LightBlue;
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dGVFotograf);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(486, 12);
@@ -229,24 +234,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tabla con la informacion de registros";
             // 
-            // btnLimpiar
+            // textBox1
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnLimpiar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(226, 397);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(91, 29);
-            this.btnLimpiar.TabIndex = 15;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(226, 47);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(256, 22);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 19);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Ingrese el valor a buscar";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Beige;
-            this.ClientSize = new System.Drawing.Size(1038, 472);
+            this.ClientSize = new System.Drawing.Size(991, 472);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -259,6 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVFotograf)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -278,10 +292,11 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label Imagen;
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Button btnSeleccionarImagen;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
